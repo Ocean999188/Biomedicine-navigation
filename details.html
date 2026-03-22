@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详细浏览 - 生物医学研究导航平台</title>
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dna"></i>
+                <span>BioResearch导航</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> 首页</a>
+                <a href="index.html#categories"><i class="fas fa-th-large"></i> 分类</a>
+                <a href="details.html" class="active"><i class="fas fa-search"></i> 详细浏览</a>
+                <a href="index.html#about"><i class="fas fa-info-circle"></i> 关于</a>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 详情页布局 -->
+    <div class="details-layout">
+        <!-- 左侧导航 -->
+        <aside class="sidebar">
+            <h3><i class="fas fa-list"></i> 快速导航</h3>
+            <ul class="category-nav">
+                <!-- JavaScript动态生成 -->
+            </ul>
+            
+            <div class="sidebar-stats">
+                <h4><i class="fas fa-chart-pie"></i> 统计信息</h4>
+                <div class="stat-item">
+                    <span>6个分类</span>
+                    <span>20个网站</span>
+                </div>
+                <div class="stat-item">
+                    <span>一键访问</span>
+                    <span>详细描述</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-help">
+                <h4><i class="fas fa-question-circle"></i> 使用提示</h4>
+                <p>点击左侧分类快速跳转，右侧显示具体网站信息。</p>
+                <p>点击"立即访问"按钮直接打开网站。</p>
+                <p>点击分类名称右侧箭头展开/收起网站列表。</p>
+            </div>
+        </aside>
+
+        <!-- 右侧内容区域 -->
+        <main class="details-content">
+            <!-- JavaScript动态生成 -->
+        </main>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-dna"></i>
+                    <span>生物医学研究导航平台</span>
+                </div>
+                <p class="footer-description">为生物医学研究人员提供一站式资源导航服务</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-envelope"></i> 联系我们</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> 帮助中心</a>
+                    <a href="#"><i class="fas fa-shield-alt"></i> 隐私政策</a>
+                </div>
+                <p class="copyright">© 2025 生物医学研究导航平台 | 仅供科研使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
