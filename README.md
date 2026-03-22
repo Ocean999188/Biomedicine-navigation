@@ -1,2 +1,3 @@
-🌐 在线访问
-GitHub Pages: https://ocean999188.github.io/Biomedicine-navigation/index.html
+## 🌐 在线访问
+- **GitHub Pages**: https://ocean999188.github.io/Biomedicine-navigation/index.html
+- **Vercel**: 
