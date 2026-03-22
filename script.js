@@ -4,29 +4,99 @@ const categoryDetails = {
         title: "🧬 蛋白质结构与功能",
         description: "蛋白质结构与功能数据库是基础研究的核心资源，提供蛋白质序列、结构、功能和生物活性信息。这些数据库是连接基因信息和蛋白质功能的桥梁，对于结构生物学、基于结构的药物设计和靶点预测至关重要。",
         websites: [
+            // 综合性蛋白质数据库
             {
                 name: "UniProt",
                 url: "https://www.uniprot.org/",
-                description: "一个综合性的蛋白质数据库，提供蛋白质序列、功能、注释和名称信息，是蛋白质知识的权威参考。它是连接基因信息和蛋白质功能的桥梁。",
+                description: "全球领先的高质量、免费蛋白质序列和功能信息资源库",
                 tags: ["蛋白质序列", "功能注释", "权威数据库"]
             },
             {
-                name: "PDB (Protein Data Bank)",
-                url: "https://www.wwpdb.org/",
-                description: "全球唯一的实验测定生物大分子（蛋白质、核酸等）三维结构数据库。对于结构生物学和基于结构的药物设计至关重要。",
+                name: "PDB (RCSB)",
+                url: "https://www.rcsb.org/",
+                description: "蛋白质结构数据库，收录蛋白质三维结构数据",
                 tags: ["三维结构", "结构生物学", "实验数据"]
             },
             {
-                name: "ChEMBL",
-                url: "https://www.ebi.ac.uk/chembl/",
-                description: "一个大型的、开放获取的生物活性数据库。它收录了大量具有类药性的小分子及其与靶点的结合、功能和ADMET（药代动力学和毒性）数据，是药物化学和靶点预测的宝贵资源。",
-                tags: ["生物活性", "药物化学", "靶点预测"]
+                name: "wwPDB",
+                url: "https://www.wwpdb.org/",
+                description: "全球蛋白质数据银行，协调全球蛋白质结构数据",
+                tags: ["数据协调", "结构数据", "全球共享"]
             },
             {
-                name: "BindingDB",
-                url: "https://www.bindingdb.org/",
-                description: "一个专注于测量和收录蛋白质-小分子结合亲和力数据的数据库。",
-                tags: ["结合亲和力", "蛋白质-小分子", "测量数据"]
+                name: "UniProtKB/Swiss-Prot",
+                url: "https://www.uniprot.org/uniprotkb/",
+                description: "专家人工审校的蛋白质知识库",
+                tags: ["人工审校", "高质量注释", "蛋白质知识"]
+            },
+            // 蛋白质结构预测与建模
+            {
+                name: "SWISS-MODEL",
+                url: "https://swissmodel.expasy.org/",
+                description: "全自动蛋白质同源建模服务器",
+                tags: ["同源建模", "结构预测", "在线服务器"]
+            },
+            {
+                name: "AlphaFold DB",
+                url: "https://alphafold.ebi.ac.uk/",
+                description: "AlphaFold 预测的蛋白质结构数据库",
+                tags: ["AI预测", "蛋白质结构", "深度学习"]
+            },
+            {
+                name: "Phyre2",
+                url: "https://github.com/labihb/phyre2",
+                description: "蛋白质同源建模和结构预测",
+                tags: ["同源建模", "结构预测", "免费工具"]
+            },
+            // 蛋白质功能分析
+            {
+                name: "ExPASy ProtParam",
+                url: "https://web.expasy.org/protparam/",
+                description: "计算蛋白质物理化学参数",
+                tags: ["理化参数", "蛋白质分析", "在线工具"]
+            },
+            {
+                name: "PROSITE",
+                url: "https://prosite.expasy.org/",
+                description: "蛋白质域、家族和功能位点数据库",
+                tags: ["蛋白质域", "功能位点", "家族分类"]
+            },
+            {
+                name: "SMART",
+                url: "https://smart.embl.de/",
+                description: "蛋白质结构域和功能分析",
+                tags: ["结构域", "功能分析", " domain分析"]
+            },
+            {
+                name: "InterPro",
+                url: "https://www.ebi.ac.uk/interpro/",
+                description: "蛋白质家族和结构域分类",
+                tags: ["蛋白质家族", "结构域", "功能分类"]
+            },
+            // 其他重要资源
+            {
+                name: "NCBI Protein",
+                url: "https://www.ncbi.nlm.nih.gov/protein/",
+                description: "NCBI 蛋白质数据库",
+                tags: ["NCBI", "蛋白质", "序列数据库"]
+            },
+            {
+                name: "Pfam",
+                url: "https://pfam.xfam.org/",
+                description: "蛋白质家族数据库",
+                tags: ["蛋白质家族", "隐马尔可夫模型", "家族分类"]
+            },
+            {
+                name: "KEGG",
+                url: "https://www.kegg.jp/",
+                description: "京都基因与基因组百科全书",
+                tags: ["代谢通路", "基因组", "系统生物学"]
+            },
+            {
+                name: "Gene Ontology",
+                url: "http://geneontology.org/",
+                description: "基因本体论 - 基因功能标准化描述",
+                tags: ["基因功能", "本体论", "标准化"]
             }
         ]
     },
@@ -450,29 +520,23 @@ function toggleCategoryList(headerElement) {
     const categoryId = headerElement.getAttribute('data-category');
     const siteList = document.getElementById(`site-list-${categoryId}`);
     const expandIcon = headerElement.querySelector('.expand-icon');
-    
+
     if (siteList && expandIcon) {
         const isExpanded = siteList.classList.contains('expanded');
-        
+
         if (isExpanded) {
-            // 收起列表
+            // 收起列表 - 使用 display: none 完全隐藏
             siteList.classList.remove('expanded');
+            siteList.style.display = 'none';
             expandIcon.classList.remove('fa-chevron-down');
             expandIcon.classList.add('fa-chevron-right');
         } else {
-            // 展开列表
+            // 展开列表 - 使用 display: block 显示
+            siteList.style.display = 'block';
             siteList.classList.add('expanded');
             expandIcon.classList.remove('fa-chevron-right');
             expandIcon.classList.add('fa-chevron-down');
-            
-            // 滚动到对应内容区域
-            const targetElement = document.getElementById(categoryId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
+            // 不再自动滚动到对应内容区域
         }
     }
 }

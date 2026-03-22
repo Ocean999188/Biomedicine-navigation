@@ -786,6 +786,11 @@ body {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     background: rgba(255, 255, 255, 0.5);
+    display: none;
+}
+
+.site-list.expanded {
+    display: block;
 }
 
 .site-list.expanded {
@@ -860,35 +865,7 @@ body {
 
 
 
-.category-nav {
-    list-style: none;
-}
-
-.category-nav a {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    color: var(--text-color);
-    border-radius: var(--radius);
-    transition: var(--transition);
-}
-
-.category-nav a:hover {
-    background: rgba(74, 111, 165, 0.1);
-    color: var(--primary-color);
-}
-
-.category-nav a.active {
-    background: var(--primary-color);
-    color: white;
-}
-
-.category-nav a i {
-    width: 20px;
-    text-align: center;
-}
+/* 旧的 .category-nav 样式已删除 - 使用新的树形导航样式 */
 
 /* 右侧内容区域 */
 .details-content {
