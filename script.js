@@ -101,32 +101,38 @@ const categoryDetails = {
         ]
     },
     drug: {
-        title: "💊 药物信息与靶点",
-        description: "药物信息与靶点数据库主要用于查询药物的基本信息、靶点、临床状态和监管信息。这些数据库对于药物发现、药理研究和临床用药指导非常重要。",
+        title: "💊 药物信息与化合物库",
+        description: "药物信息与化合物库数据库主要用于查询药物的基本信息、化合物结构、靶点、作用机制和生物活性数据。这些数据库对于药物发现、药物化学研究、虚拟筛选和构效关系分析至关重要。",
         websites: [
             {
                 name: "DrugBank",
                 url: "https://go.drugbank.com/",
-                description: "一个综合性的药物数据库，详细收录了FDA批准的药物和处于研究阶段的药物信息，包括其化学结构、药理作用、靶点蛋白、作用机制和药物相互作用等。",
-                tags: ["药物信息", "FDA批准", "作用机制"]
+                description: "全球最强大的综合性药物数据库，包含详细的药物靶点、作用机制、药代动力学等数据",
+                tags: ["药物信息", "靶点", "作用机制"]
             },
             {
                 name: "PubChem",
                 url: "https://pubchem.ncbi.nlm.nih.gov/",
-                description: "由美国国立卫生研究院（NIH）管理的开放化学数据库，收录了海量的化合物、物质和生物活性信息，支持结构检索。",
-                tags: ["化合物数据库", "生物活性", "化学结构"]
+                description: "NCBI旗下最大的开放化学物质数据库，包含化合物结构、理化性质、生物活性等",
+                tags: ["化合物数据库", "NCBI", "生物活性"]
             },
             {
-                name: "IUPHAR/BPS Guide to PHARMACOLOGY",
-                url: "https://www.guidetopharmacology.org/",
-                description: "一个权威的受体和离子通道数据库，专注于配体-活性-靶点关系，旨在提供药理学的'一站式'资源。",
-                tags: ["受体数据库", "离子通道", "药理学"]
+                name: "ChEMBL",
+                url: "https://www.ebi.ac.uk/chembl/",
+                description: "欧洲生物信息学研究所维护的药物化学数据库",
+                tags: ["药物化学", "EBI", "生物活性数据"]
             },
             {
-                name: "Open Targets",
-                url: "https://www.opentargets.org/",
-                description: "一个公私合作项目，整合了遗传学、药理学、文献等多种公开数据源，为治疗靶点的系统性识别和优先排序提供评分和证据。",
-                tags: ["靶点识别", "遗传学", "药理学"]
+                name: "ChemSpider",
+                url: "https://www.chemspider.com/",
+                description: "RSC旗下化学结构数据库",
+                tags: ["化学结构", "RSC", "化合物"]
+            },
+            {
+                name: "BindingDB",
+                url: "https://www.bindingdb.org/",
+                description: "蛋白质-配体结合亲和力数据库",
+                tags: ["结合亲和力", "蛋白质-配体", "药物靶点"]
             }
         ]
     },
