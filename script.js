@@ -102,8 +102,9 @@ const categoryDetails = {
     },
     drug: {
         title: "💊 药物信息与化合物库",
-        description: "药物信息与化合物库数据库主要用于查询药物的基本信息、化合物结构、靶点、作用机制和生物活性数据。这些数据库对于药物发现、药物化学研究、虚拟筛选和构效关系分析至关重要。",
+        description: "药物信息与化合物库数据库主要用于查询药物的基本信息、化合物结构、靶点、作用机制和生物活性数据，以及购买化合物和药物先导化合物的商业资源。这些数据库对于药物发现、药物化学研究、虚拟筛选、构效关系分析和化合物采购至关重要。",
         websites: [
+            // 药物与化合物数据库
             {
                 name: "DrugBank",
                 url: "https://go.drugbank.com/",
@@ -133,6 +134,79 @@ const categoryDetails = {
                 url: "https://www.bindingdb.org/",
                 description: "蛋白质-配体结合亲和力数据库",
                 tags: ["结合亲和力", "蛋白质-配体", "药物靶点"]
+            },
+            // 化合物供应商
+            {
+                name: "Enamine",
+                url: "https://enamine.net/",
+                description: "全球领先，每年合成30万新化合物，REAL数据库业界知名",
+                tags: ["化合物供应商", "REAL数据库", "商业化合物"]
+            },
+            {
+                name: "ChemBridge",
+                url: "https://chembridge.com/",
+                description: "提供超过130万个化合物",
+                tags: ["化合物供应商", "化合物库", "筛选库"]
+            },
+            {
+                name: "OTAVAchemicals",
+                url: "https://www.otavachemicals.com/",
+                description: "专业靶向化合物库",
+                tags: ["化合物供应商", "靶向化合物", "专有库"]
+            },
+            {
+                name: "Lifechemicals",
+                url: "https://lifechemicals.com/",
+                description: "提供多样性化合物库",
+                tags: ["化合物供应商", "多样性库", "筛选"]
+            },
+            {
+                name: "Specs",
+                url: "https://www.specs.net/",
+                description: "荷兰供应商",
+                tags: ["化合物供应商", "荷兰", "化合物库"]
+            },
+            {
+                name: "Microsource",
+                url: "https://www.msd-uk.com/",
+                description: "拥有已知活性化合物库",
+                tags: ["化合物供应商", "活性化合物", "已知活性"]
+            },
+            {
+                name: "MedChemExpress (MCE)",
+                url: "https://www.medchemexpress.cn/",
+                description: "拥有超过20,000种活性化合物，包含Vitas-M库（140万+化合物）",
+                tags: ["化合物供应商", "MCE", "活性化合物"]
+            },
+            {
+                name: "TargetMol",
+                url: "https://www.targetmol.cn/",
+                description: "提供多种化合物库，包括临床期药物库",
+                tags: ["化合物供应商", "临床药物", "化合物库"]
+            },
+            {
+                name: "Selleck Chemicals",
+                url: "https://www.selleck.cn/",
+                description: "热卖FDA药物库等",
+                tags: ["化合物供应商", "FDA药物", "上市药物"]
+            },
+            {
+                name: "APExBIO",
+                url: "https://www.apexbio.cn/",
+                description: "美国总部，提供小分子抑制剂、化合物库等",
+                tags: ["化合物供应商", "小分子抑制剂", "美国"]
+            },
+            {
+                name: "AnyMole",
+                url: "https://www.anymole.com/",
+                description: "可定制化合物库",
+                tags: ["化合物供应商", "定制化合物", "个性化"]
+            },
+            {
+                name: "WuXi AppTec（药明康德）",
+                url: "https://chemistry.wuxiapptec.com/cn/library",
+                description: "20年组合化学经验，总交货量超过300万化合物",
+                tags: ["化合物供应商", "药明康德", "组合化学"]
             }
         ]
     },
