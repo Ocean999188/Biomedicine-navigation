@@ -439,7 +439,11 @@ function initDetailsPage() {
                         ${category.websites.map(website => `
                             <div class="site-card">
                                 <div class="site-header">
-                                    <div>
+                                    <img src="https://logo.clearbit.com/${getDomainFromUrl(website.url)}" 
+                                         alt="${website.name} logo" 
+                                         class="site-logo"
+                                         onerror="this.style.display='none'">
+                                    <div class="site-title-info">
                                         <h3>${website.name}</h3>
                                         <a href="${website.url}" target="_blank" class="site-url">${website.url}</a>
                                     </div>
@@ -475,6 +479,17 @@ function initDetailsPage() {
             toggleCategoryList(firstCategory);
         }
     }, 100);
+}
+
+// 从URL提取域名用于Clearbit Logo API
+function getDomainFromUrl(url) {
+    try {
+        const hostname = new URL(url).hostname;
+        // 移除www.前缀
+        return hostname.replace(/^www\./, '');
+    } catch (e) {
+        return '';
+    }
 }
 
 // 获取分类图标
