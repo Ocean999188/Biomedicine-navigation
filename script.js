@@ -439,9 +439,10 @@ function initDetailsPage() {
                         ${category.websites.map(website => `
                             <div class="site-card">
                                 <div class="site-header">
-                                    <img src="https://www.google.com/s2/favicons?domain=${getDomainFromUrl(website.url)}&sz=64"
+                                    <img src="https://logo.clearbit.com/${getDomainFromUrl(website.url)}"
                                          alt="${website.name}"
-                                         class="site-logo">
+                                         class="site-logo"
+                                         onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=${getDomainFromUrl(website.url)}&sz=64';">
                                     <div class="site-title-info">
                                         <h3>${website.name}</h3>
                                         <a href="${website.url}" target="_blank" class="site-url">${website.url}</a>
@@ -480,7 +481,7 @@ function initDetailsPage() {
     }, 100);
 }
 
-// 从URL提取域名用于Clearbit Logo API
+// 从URL提取域名用于Logo API
 function getDomainFromUrl(url) {
     try {
         const hostname = new URL(url).hostname;
