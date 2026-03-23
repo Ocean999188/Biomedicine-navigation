@@ -135,6 +135,18 @@ const categoryDetails = {
                 description: "蛋白质-配体结合亲和力数据库",
                 tags: ["结合亲和力", "蛋白质-配体", "药物靶点"]
             },
+            {
+                name: "Drugs@FDA",
+                url: "https://www.accessdata.fda.gov/scripts/cder/daf/",
+                description: "FDA官方药物数据库，可查询FDA批准的药品信息、审评文件、说明书等",
+                tags: ["FDA", "药物批准", "官方数据库"]
+            },
+            {
+                name: "ZINC",
+                url: "https://zinc.docking.org/",
+                description: "收录海量商业化化合物结构的数据库，主要用于虚拟筛选",
+                tags: ["化合物库", "虚拟筛选", "分子对接"]
+            },
             // 化合物供应商
             {
                 name: "Enamine",
@@ -284,7 +296,7 @@ const categoryDetails = {
     },
     tools: {
         title: "🔬 药物设计工具",
-        description: "药物设计工具提供在线计算功能，如pKa预测、代谢预测、毒理预测等，支持药物设计和性质优化。",
+        description: "药物设计工具提供在线计算功能，如pKa预测、代谢预测、毒理预测、分子对接、RNA结构预测等，支持药物设计和性质优化。",
         websites: [
             {
                 name: "Xundrug MolGpKa",
@@ -303,6 +315,72 @@ const categoryDetails = {
                 url: "https://www.mmvsl.it/wp/venompred2/",
                 description: "毒理预测工具，用于评估化合物的毒性和安全性。",
                 tags: ["毒理预测", "安全性评估", "毒性分析"]
+            },
+            {
+                name: "ADMET-SAR",
+                url: "https://lmmd.ecust.edu.cn/admetsar3/index.php",
+                description: "ADMET性质预测平台，用于预测药物的吸收、分布、代谢、排泄和毒性性质。",
+                tags: ["ADMET", "性质预测", "药物设计"]
+            },
+            {
+                name: "MolGpKa (华东理工)",
+                url: "http://pka.luoszgroup.com/",
+                description: "分子pKa预测工具，基于机器学习算法预测分子的酸解离常数。",
+                tags: ["pKa预测", "机器学习", "物化性质"]
+            },
+            {
+                name: "MolGpKa Prediction",
+                url: "http://pka.luoszgroup.com/prediction",
+                description: "分子pKa预测工具的预测页面，提供详细的pKa预测功能。",
+                tags: ["pKa预测", "在线工具", "药物设计"]
+            },
+            {
+                name: "ZDOCK",
+                url: "https://zdock.wenglab.org/",
+                description: "蛋白质-蛋白质对接工具，用于预测蛋白质复合物的三维结构。",
+                tags: ["分子对接", "蛋白质-蛋白质", "结构预测"]
+            },
+            {
+                name: "HawkDock",
+                url: "https://cadd.zju.edu.cn/hawkdock/",
+                description: "浙江大学开发的分子对接工具，支持蛋白质-配体对接。",
+                tags: ["分子对接", "蛋白质-配体", "浙江大学"]
+            },
+            {
+                name: "GRAMM",
+                url: "https://gramm.compbio.ku.edu/gramm",
+                description: "分子对接工具，用于蛋白质-蛋白质和蛋白质-配体对接。",
+                tags: ["分子对接", "蛋白质-配体", "蛋白质-蛋白质"]
+            },
+            {
+                name: "SwissADME",
+                url: "https://swissadme.ch/",
+                description: "瑞士开发的ADME性质预测工具，预测药物的吸收、分布、代谢和排泄性质。",
+                tags: ["ADME", "性质预测", "瑞士"]
+            },
+            {
+                name: "PharmMapper",
+                url: "https://www.lilab-ecust.cn/pharmmapper/submitfile.html",
+                description: "药物靶点预测工具，基于药效团匹配预测药物潜在靶点。",
+                tags: ["靶点预测", "药效团", "药物靶点"]
+            },
+            {
+                name: "SimRNAweb",
+                url: "https://genesilico.pl/SimRNAweb/",
+                description: "RNA结构预测工具，用于预测RNA的三维结构。",
+                tags: ["RNA结构", "结构预测", "生物信息学"]
+            },
+            {
+                name: "3dRNA",
+                url: "http://biophy.hust.edu.cn/new/3dRNA/create",
+                description: "华中科技大学开发的RNA三维结构预测工具。",
+                tags: ["RNA结构", "结构预测", "华中科技大学"]
+            },
+            {
+                name: "HDOCK",
+                url: "http://hdock.phys.hust.edu.cn/",
+                description: "华中科技大学开发的分子对接工具，支持蛋白质-蛋白质和蛋白质-配体对接。",
+                tags: ["分子对接", "蛋白质-配体", "华中科技大学"]
             }
         ]
     }
@@ -475,27 +553,7 @@ function initDetailsPage() {
     if (categoryNav) {
         let navHTML = '';
         for (const [id, category] of Object.entries(categoryDetails)) {
-            navHTML += `
-                <li class="category-item">
-                    <div class="category-header" data-category="${id}">
-                        <div class="category-title">
-                            <i class="fas fa-chevron-right expand-icon"></i>
-                            <span class="nav-text">${category.title}</span>
-                        </div>
-                        <span class="site-count">${category.websites.length}个网站</span>
-                    </div>
-                    <ul class="site-list" id="site-list-${id}">
-                        ${category.websites.map(website => `
-                            <li>
-                                <a href="${website.url}" target="_blank" class="site-link" title="${website.description}">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>${website.name}</span>
-                                </a>
-                            </li>
-                        `).join('')}
-                    </ul>
-                </li>
-            `;
+            navHTML += `<li class="category-item"><div class="category-header" data-category="${id}"><div class="category-title"><i class="fas fa-chevron-right expand-icon"></i><span class="nav-text">${category.title}</span></div><span class="site-count">${category.websites.length}个网站</span></div><ul class="site-list" id="site-list-${id}">${category.websites.map(website => `<li><a href="${website.url}" target="_blank" class="site-link" title="${website.description}"><i class="fas fa-external-link-alt"></i><span>${website.name}</span></a></li>`).join('')}</ul></li>`;
         }
         categoryNav.innerHTML = navHTML;
     }

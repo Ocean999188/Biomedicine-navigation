@@ -736,6 +736,12 @@ body {
     margin-top: 0;
 }
 
+/* 移除列表项之间的所有间距 */
+.category-nav li {
+    margin: 0;
+    padding: 0;
+}
+
 .category-header {
     display: flex;
     justify-content: space-between;
