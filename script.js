@@ -439,10 +439,10 @@ function initDetailsPage() {
                         ${category.websites.map(website => `
                             <div class="site-card">
                                 <div class="site-header">
-                                    <img src="https://logo.clearbit.com/${getDomainFromUrl(website.url)}" 
+                                    <img src="https://www.google.com/s2/favicons?domain=${getDomainFromUrl(website.url)}&sz=64" 
                                          alt="${website.name} logo" 
                                          class="site-logo"
-                                         onerror="this.style.display='none'">
+                                         onerror="this.src='https://www.google.com/s2/favicons?domain=example.com&sz=64'">
                                     <div class="site-title-info">
                                         <h3>${website.name}</h3>
                                         <a href="${website.url}" target="_blank" class="site-url">${website.url}</a>
